@@ -1,0 +1,73 @@
+Rewards:
+  Diamond:
+    Give-Money: false
+    Execute-Command: false
+    Add-Item: true
+    Send-Message: true
+    Money-to-add: 0
+    Console-Command: none
+    Item:
+      ID: 264
+      SUB_ID: 0
+      AMOUNT: 12
+      NAME: '&3&ki&r &bEpic Diamond &3&ki&r'
+      LORE:
+      - '&7This is an epic diamond!'
+      ENCHANTS:
+      - DAMAGE_ALL,10
+      - PROTECTION_FIRE,2
+    Message: '&2Premio: &6x12 Diamonds'
+  Money:
+    Give-Money: true
+    Execute-Command: false
+    Add-Item: false
+    Send-Message: true
+    Money-to-add: 20000
+    Console-Command: none
+    Item:
+      ID: 264
+      SUB_ID: 0
+      AMOUNT: 12
+      NAME: '&3&ki&r &bEpic Diamond &3&ki&r'
+      LORE:
+      - '&7This is an epic diamond!'
+      ENCHANTS:
+      - DAMAGE_ALL,10
+      - PROTECTION_FIRE,2
+    Message: '&2Premio: &6$20000'
+  ConsoleCommand:
+    Give-Money: false
+    Execute-Command: true
+    Add-Item: false
+    Send-Message: true
+    Money-to-add: 0
+    Console-Command: eco give %player% 20000
+    Item:
+      ID: 264
+      SUB_ID: 0
+      AMOUNT: 12
+      NAME: '&3&ki&r &bEpic Diamond &3&ki&r'
+      LORE:
+      - '&7This is an epic diamond!'
+      ENCHANTS:
+      - DAMAGE_ALL,10
+      - PROTECTION_FIRE,2
+    Message: '&2Premio: &6$20000 from console'
+  All:
+    Give-Money: true
+    Execute-Command: true
+    Add-Item: true
+    Send-Message: true
+    Money-to-add: 20000
+    Console-Command: eco give %player% 1
+    Item:
+      ID: 276
+      SUB_ID: 0
+      AMOUNT: 1
+      NAME: '&3&ki&r &bEpic Sword &3&ki&r'
+      LORE:
+      - '&7This is an epic sword'
+      ENCHANTS:
+      - DAMAGE_ALL,10
+      - DURABILITY,100
+    Message: '&2Premios: &6$20000 &7- &6Diamond Sword &7- &6$1'

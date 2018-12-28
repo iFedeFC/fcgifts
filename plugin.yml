@@ -1,0 +1,10 @@
+author: iFedeFC
+name: FCGifts
+version: 1
+website: mc.felishion.pw
+description: Find heads around the world
+main: me.felishion.heads.Main
+commands:
+  fcgifts:
+    description: Main command
+    usage: /<command>

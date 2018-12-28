@@ -1,0 +1,51 @@
+
+
+FinalReward:
+  enable: true 
+  Give-Money: true
+  Execute-Command: true
+  Add-Item: true
+  Send-Message: true
+  Money-to-add: 50000
+  Console-Command: fly %player%
+  Item:
+    ID: 264
+    SUB_ID: 0
+    AMOUNT: 12
+    NAME: '&3&ki&r &bEpic Diamond &3&ki&r'
+    LORE:
+    - '&7This is an epic diamond!'
+    ENCHANTS:
+    - DAMAGE_ALL,10
+    - PROTECTION_FIRE,2
+  Message: '&6Has encontrado TODOS los gifts. Tu premio: &d+ $50000 &7- &dEpic Diamond &7- &dFly autorizado'
+
+PlaceholderAPI: true
+MESSAGES:
+  Join-Editor: '&6&oFCGift''s &aHas entrado en el modo editor'
+  Leave-Editor: '&6&oFCGift''s &cHas salido del modo editor'
+  Already-Found: '&6&oFCGift''s &cYa has encontrado este regalo'
+  Gift-Added: '&6&oFCGift''s &aRegalo añadido a la lista!'
+  Gift-Removed: '&6&oFCGift''s &cRegalo removido de la lista!'
+  Gift-Found: '&6&oFCGift''s &aHas encontrado un regalo! &6(&2%player_gifts%&6/&2%total_gifts%&6)'
+  SetReward-Usage: '&6&oFCGift''s &aIncorrecto, usa: /fcgifts setreward <rewardname>'
+  Reward-Added: '&6&oFCGift''s &aHas añadido la reward &6%reward%&a a este gift'
+  No-Head: '&6&oFCGift''s &cEsto no es un gift!'
+  Invalid-Reward: '&6&oFCGift''s &cEste reward no existe!'
+  Need-EditMode: '&6&oFCGift''s &cNecesitas estar en el modo editor para hacer esto'
+  All-Gifts-Found:
+   - '&6--------------------------------------------'
+   - '      &b&lGIFTS REWARDS'
+   - ''
+   - '&a&l>&2&l> &7%player% &fencontro los &d%gifts%&f escondidos!'
+   - ''
+   - '&6--------------------------------------------'
+SOUNDS:
+  Join-Editor: ORB_PICKUP
+  Leave-Editor: ORB_PICKUP
+  Already-Found: VILLAGER_NO
+  Gift-Added: LEVEL_UP
+  Gift-Removed: VILLAGER_NO
+  Gift-Found: FIREWORK_LAUNCH
+  
+  
