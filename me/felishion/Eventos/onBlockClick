@@ -1,1 +1,78 @@
 
+package me.felishion.Eventos;
+
+import org.bukkit.Material;
+
+import org.bukkit.Sound;
+import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
+import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
+
+import me.felishion.heads.HeadsAPI;
+import me.felishion.heads.Main;
+
+public class onBlockClick implements Listener {
+
+	public onBlockClick(Main pl) {
+		pl.getServer().getPluginManager().registerEvents(this, pl);
+	}
+
+	
+	@EventHandler
+	public void onJoin(PlayerJoinEvent e) {
+		HeadsAPI.setParticle(e.getPlayer());
+	}
+	@EventHandler
+	public void onClick(PlayerInteractEvent e) {
+		Player player = e.getPlayer();
+		if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
+			if (e.getClickedBlock() != null) {
+				Block b = e.getClickedBlock();
+				if (HeadsAPI.ishead(b.getLocation())) {
+					if (!HeadsAPI.hashead(player, b.getLocation())) {
+
+						HeadsAPI.sethead(player, b.getLocation());
+
+					} else {
+						player.sendMessage(Main.plugin.getLang().getString("MESSAGES.Already-Found").replace("&", "§"));
+						player.playSound(player.getLocation(),
+								Sound.valueOf(Main.plugin.getLang().getString("SOUNDS.Already-Found")), 1, 1);
+					}
+				}
+			}
+		}
+	}
+
+	@EventHandler
+	public void onPlace(BlockPlaceEvent e) {
+		Player player = e.getPlayer();
+		if (Main.editmode.contains(player)) {
+			if (e.getBlock().getType() == Material.SKULL) {
+
+				HeadsAPI.setlocation(player, e.getBlock().getLocation());
+
+			}
+		}
+	}
+	@EventHandler
+	public void onBreak(BlockBreakEvent e) {
+		Player player = e.getPlayer();
+		if(e.getBlock().getType() == Material.SKULL) {
+			if(HeadsAPI.ishead(e.getBlock().getLocation())) {
+				if(Main.editmode.contains(player)) {
+					HeadsAPI.removelocation(player, e.getBlock().getLocation());
+				}else {
+					e.setCancelled(true);
+					player.sendMessage(Main.plugin.getLang().getString("MESSAGES.Need-EditMode").replace("&", "§"));
+				}
+			}
+		}
+	}
+
+}
